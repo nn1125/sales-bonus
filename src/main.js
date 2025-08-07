@@ -129,7 +129,6 @@ function analyzeSalesData(data, options) {
         seller.top_products = Object.entries(seller.products_sold || {})
             .map(([sku, quantity]) => ({
                 sku,
-                name: productIndex[sku]?.name || 'Неизвестный товар',
                 quantity: Number(quantity) || 0
             }))
             .sort((a, b) => b.quantity - a.quantity)
